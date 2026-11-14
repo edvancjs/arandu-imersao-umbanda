@@ -661,6 +661,10 @@ b.addEventListener('click',function(){var open=m.hidden;m.hidden=!open;b.textCon
       try{if(!localStorage.getItem('iun13_vis_'+V)){localStorage.setItem('iun13_vis_'+V,'1');conta(V+'_unicos');}}catch(e){}
     },800);
   }
+  function refaz(){try{var as=document.querySelectorAll('[data-compra]'),i;for(i=0;i<as.length;i++)as[i].setAttribute('href',link());}catch(e){}}
+  /* o GTM tambem anexa UTMs nos links: refaz o link depois dele, para ficar com um unico utm_content */
+  window.addEventListener('load',function(){setTimeout(refaz,1500);setTimeout(refaz,4000);});
+  ['mousedown','touchstart','focus'].forEach(function(ev){document.addEventListener(ev,function(e){if(e.target&&e.target.closest&&e.target.closest('[data-compra]'))refaz();},true);});
   if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init);else init();
 })();
 </script>
