@@ -14,9 +14,9 @@
 <script>
 !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
 fbq('init','221011049735408');
-fbq('track','PageView');
+fbq('track','PageView',{page_variant:'v3'});
 </script>
-<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=221011049735408&ev=PageView&noscript=1" alt=""></noscript>
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=221011049735408&ev=PageView&cd%5Bpage_variant%5D=v3&noscript=1" alt=""></noscript>
 
 <style>
 :root{
@@ -331,6 +331,33 @@ var CONFIG = [
 ];
 var CHECKOUT = "https://pagamento.aranduacademy.com.br/pay/imersao-umbanda-natural-oficial";
 
+/* Teste A/B: marca de origem (utm_content com prefixo v3_) e contador proprio. Nunca quebra o botao se falhar. */
+function linkCompra(){
+  try{
+    var out=[],ct=null,ps=location.search.replace(/^\?/,'').split('&'),i,kv,k;
+    for(i=0;i<ps.length;i++){
+      if(!ps[i])continue;kv=ps[i].split('=');k=kv[0];
+      if(k==='ab')continue;
+      if(k==='utm_content'){ct=kv.slice(1).join('=');continue;}
+      out.push(ps[i]);
+    }
+    var orig='';try{orig=ct?decodeURIComponent(ct.replace(/\+/g,' ')):'';}catch(e){orig=ct||'';}
+    out.push('utm_content='+encodeURIComponent(('v3'+(orig?'_'+orig:'')).slice(0,191)));
+    return CHECKOUT+'?'+out.join('&');
+  }catch(e){return CHECKOUT;}
+}
+function contaAB(k){
+  try{
+    var u='https://abacus.jasoncameron.dev/hit/arandu-iun13-ab/'+k;
+    if(window.fetch)fetch(u,{mode:'no-cors',keepalive:true}).catch(function(){});else(new Image()).src=u;
+  }catch(e){}
+}
+setTimeout(function(){
+  contaAB('v3_visitas');
+  try{if(!localStorage.getItem('iun13_vis_v3')){localStorage.setItem('iun13_vis_v3','1');contaAB('v3_unicos');}}catch(e){}
+},800);
+try{ document.querySelectorAll('[data-compra]').forEach(function(a){ a.setAttribute('href', linkCompra()); }); }catch(e){}
+
 (function(){
   function semanaAtual(){
     var agora = Date.now();
@@ -359,8 +386,9 @@ var CHECKOUT = "https://pagamento.aranduacademy.com.br/pay/imersao-umbanda-natur
     a.addEventListener('click', function(ev){
       ev.preventDefault();
       var ido = false;
-      function ir(){ if (ido) return; ido = true; window.location.href = CHECKOUT; }
-      try { fbq('track','InitiateCheckout'); } catch(e){}
+      function ir(){ if (ido) return; ido = true; window.location.href = linkCompra(); }
+      contaAB('v3_cliques');
+      try { fbq('track','InitiateCheckout',{page_variant:'v3'}); } catch(e){}
       setTimeout(ir, 250);
     });
   });

@@ -1,7 +1,54 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-W9XCN54J');</script>
+<script>
+/* TESTE A/B /v2 x /v3 (IUN13). Fica no topo do head, antes do resto, para a /v2 nao piscar.
+   50% ficam na /v2 e 50% vao para a /v3. A pessoa fica sempre na mesma versao (localStorage + cookie).
+   ?ab=v2 ou ?ab=v3 forca a versao. Mantem todos os parametros da URL (utm_*, fbclid). */
+(function(){
+  var K='iun13_ab', v=null, m=/[?&]ab=(v2|v3)(&|$)/.exec(location.search);
+  function ler(){
+    var r=null;
+    try{r=localStorage.getItem(K);}catch(e){}
+    if(r!=='v2'&&r!=='v3'){var c=document.cookie.match(/(?:^|; )iun13_ab=(v2|v3)/);r=c?c[1]:null;}
+    return r;
+  }
+  function gravar(x){
+    try{localStorage.setItem(K,x);}catch(e){}
+    try{document.cookie=K+'='+x+'; max-age=7776000; path=/; SameSite=Lax';}catch(e){}
+  }
+  try{
+    if(m){v=m[1];gravar(v);}else{v=ler();}
+    if(v!=='v2'&&v!=='v3'){v=(Math.random()<0.5)?'v2':'v3';gravar(v);}
+  }catch(e){v='v2';}
+  window.__AB={v:v,redirect:false};
+  if(v==='v3'){
+    window.__AB.redirect=true;
+    var alvo=location.pathname.replace(/v2(\/(index\.html)?)?$/,'v3/')+location.search+location.hash;
+    if(alvo.indexOf('v3')<0)alvo='/v3/'+location.search+location.hash;
+    location.replace(alvo);
+  }
+})();
+</script>
+<script>
+/* Pixel da Meta (carregado pelo GTM): PageView e InitiateCheckout levam page_variant=v2. */
+(function(){
+  if(window.__AB&&window.__AB.redirect){window.fbq=function(){};window._fbq=window.fbq;return;}
+  if(window.fbq)return;
+  var w=function(){
+    var a=[].slice.call(arguments);
+    if(a[0]==='track'&&(a[1]==='PageView'||a[1]==='InitiateCheckout')){
+      var o={},x=a[2]&&typeof a[2]==='object'?a[2]:{},k;
+      for(k in x)o[k]=x[k];
+      o.page_variant='v2';a[2]=o;
+    }
+    if(w.callMethod)w.callMethod.apply(w,a);else w.queue.push(a);
+  };
+  window.fbq=w;if(!window._fbq)window._fbq=w;
+  w.push=w;w.loaded=true;w.version='2.0';w.queue=[];
+})();
+</script>
+<script>if(!(window.__AB&&window.__AB.redirect))(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-W9XCN54J');</script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>O que você sente tem nome. E tem explicação. | Imersão Umbanda Natural</title>
@@ -377,7 +424,7 @@
 </head>
 <body>
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W9XCN54J" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<div class="topbar" id="topbar"><div class="topbar-in"><span class="topbar-txt">Ingresso a <b>R$ <span data-v="preco">29,90</span></b> até <span data-v="ate">segunda, 16/11</span></span><span class="tb-time">Termina em <span id="tb-d">--</span>d <span id="tb-h">--</span>h <span id="tb-m">--</span>min <span id="tb-s">--</span>s</span><a class="btn" href="https://pagamento.aranduacademy.com.br/pay/imersao-umbanda-natural-oficial">GARANTIR MEU INGRESSO</a></div></div>
+<div class="topbar" id="topbar"><div class="topbar-in"><span class="topbar-txt">Ingresso a <b>R$ <span data-v="preco">29,90</span></b> até <span data-v="ate">segunda, 16/11</span></span><span class="tb-time">Termina em <span id="tb-d">--</span>d <span id="tb-h">--</span>h <span id="tb-m">--</span>min <span id="tb-s">--</span>s</span><a class="btn" href="https://pagamento.aranduacademy.com.br/pay/imersao-umbanda-natural-oficial" data-compra>GARANTIR MEU INGRESSO</a></div></div>
 
 
 <section class="section hero-sec" id="hero"><div class="container"><div class="split split-text-first">
@@ -488,7 +535,7 @@
 <div class="preco-tag">De R$ 497,00 por</div>
 <p class="preco-principal"><span class="so-parcela">12x de R$ <span data-v="parcela">2,90</span></span><small><span class="so-parcela">(ou </span>R$ <span data-v="preco">29,90</span> à vista<span class="so-parcela">)</span></small></p>
 <p class="preco-legal" style="margin-top:14px">Ingresso desta semana</p>
-<a class="btn btn-block" href="https://pagamento.aranduacademy.com.br/pay/imersao-umbanda-natural-oficial">QUERO GARANTIR MINHA VAGA</a>
+<a class="btn btn-block" href="https://pagamento.aranduacademy.com.br/pay/imersao-umbanda-natural-oficial" data-compra>QUERO GARANTIR MINHA VAGA</a>
 </div>
 <p class="so-aberto" style="margin-top:22px"><b>O ingresso desta semana vale até <span data-v="ate">segunda, 16/11</span>. <span class="so-prox">Na virada de segunda para terça, o ingresso sobe R$ 10.</span></b></p>
 <div class="contador" id="contador"><p class="cont-tit">O valor encerra em:</p><div class="cont-nums"><div><b id="cd-d">--</b><span>dias</span></div><div><b id="cd-h">--</b><span>horas</span></div><div><b id="cd-m">--</b><span>minutos</span></div><div><b id="cd-s">--</b><span>segundos</span></div></div></div>
@@ -519,7 +566,7 @@
 <p>Dois dias, ao vivo, com fundamento. Sem atalho e sem misticismo vazio. O lugar para começar é este.</p>
 <p class="so-aberto"><b>Seu ingresso está a R$ <span data-v="preco">29,90</span> até <span data-v="ate">segunda, 16/11</span>.</b></p>
 <p>Quando algo fizer sentido durante a Imersão, o Ricardo pede que você escreva "tá pago" no chat. É o jeito dele de saber que aquilo fez sentido para você.</p>
-<a class="btn" href="https://pagamento.aranduacademy.com.br/pay/imersao-umbanda-natural-oficial">QUERO GARANTIR MINHA VAGA</a>
+<a class="btn" href="https://pagamento.aranduacademy.com.br/pay/imersao-umbanda-natural-oficial" data-compra>QUERO GARANTIR MINHA VAGA</a>
 </div>
 <div class="fechamento-photo"><img src="../assets-iun13/ricardo/ricardo-05.jpg" alt="Ricardo Di Napoli caminhando na praia"></div>
 </div></div></section>
@@ -573,5 +620,48 @@ var T=setInterval(tick,1000);tick();
 <script>
 (function(){var b=document.getElementById('maisDepo'),m=document.getElementById('depoMais');if(!b||!m)return;
 b.addEventListener('click',function(){var open=m.hidden;m.hidden=!open;b.textContent=open?'Ver menos depoimentos':'Ver mais depoimentos';b.setAttribute('aria-expanded',open?'true':'false');});})();
+</script>
+<script>
+/* Marca de origem nos botoes de compra + contador proprio (nao atrasa a pagina nem quebra o botao se falhar). */
+(function(){
+  var V='v2',CHECKOUT='https://pagamento.aranduacademy.com.br/pay/imersao-umbanda-natural-oficial',NS='arandu-iun13-ab';
+  function link(){
+    try{
+      var out=[],ct=null,ps=location.search.replace(/^\?/,'').split('&'),i,kv,k;
+      for(i=0;i<ps.length;i++){
+        if(!ps[i])continue;kv=ps[i].split('=');k=kv[0];
+        if(k==='ab')continue;
+        if(k==='utm_content'){ct=kv.slice(1).join('=');continue;}
+        out.push(ps[i]);
+      }
+      var orig='';try{orig=ct?decodeURIComponent(ct.replace(/\+/g,' ')):'';}catch(e){orig=ct||'';}
+      out.push('utm_content='+encodeURIComponent((V+(orig?'_'+orig:'')).slice(0,191)));
+      return CHECKOUT+'?'+out.join('&');
+    }catch(e){return CHECKOUT;}
+  }
+  function conta(k){
+    try{
+      var u='https://abacus.jasoncameron.dev/hit/'+NS+'/'+k;
+      if(window.fetch)fetch(u,{mode:'no-cors',keepalive:true}).catch(function(){});else(new Image()).src=u;
+    }catch(e){}
+  }
+  function init(){
+    try{
+      var as=document.querySelectorAll('[data-compra]'),i;
+      for(i=0;i<as.length;i++){
+        as[i].setAttribute('href',link());
+        as[i].addEventListener('click',function(){
+          try{this.setAttribute('href',link());}catch(e){}
+          conta(V+'_cliques');
+        });
+      }
+    }catch(e){}
+    setTimeout(function(){
+      conta(V+'_visitas');
+      try{if(!localStorage.getItem('iun13_vis_'+V)){localStorage.setItem('iun13_vis_'+V,'1');conta(V+'_unicos');}}catch(e){}
+    },800);
+  }
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init);else init();
+})();
 </script>
 </body></html>
