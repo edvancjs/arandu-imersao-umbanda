@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow, noarchive">
+<title>Placar do teste</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{overflow-x:hidden}
+body{font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;background:#f7f7f4;color:#1f2a14;font-size:20px;line-height:1.35;padding:20px 14px 40px}
+main{max-width:760px;margin:0 auto}
+h1{font-size:28px;line-height:1.15;margin-bottom:6px}
+.sub{color:#5a6350;font-size:17px;margin-bottom:18px}
+.aviso{background:#fff3cd;border:2px solid #e0a800;border-radius:12px;padding:12px 14px;font-size:18px;font-weight:600;margin-bottom:16px}
+.aviso[hidden]{display:none}
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.col{background:#fff;border-radius:16px;padding:14px 12px;box-shadow:0 1px 4px rgba(0,0,0,.08);min-width:0}
+.col h2{font-size:26px;text-align:center;margin-bottom:10px;color:#333c24}
+.item{padding:10px 0;border-top:1px solid #ecece6}
+.item:first-of-type{border-top:0}
+.rot{font-size:15px;color:#5a6350}
+.num{font-size:30px;font-weight:700;line-height:1.1;overflow-wrap:anywhere}
+.peq{font-size:16px;color:#5a6350}
+.frente{margin-top:18px;background:#333c24;color:#fff;border-radius:16px;padding:18px 16px;font-size:24px;font-weight:700;text-align:center;line-height:1.25}
+.frente small{display:block;font-size:16px;font-weight:400;margin-top:8px;opacity:.9}
+.rodape{margin-top:16px;color:#5a6350;font-size:16px;text-align:center}
+@media (min-width:600px){body{padding-top:36px}h1{font-size:34px}.num{font-size:36px}}
+</style>
+</head>
+<body>
+<main>
+<h1>Placar do teste: página v2 x página v3</h1>
+<p class="sub">Metade das pessoas vê cada página. Aqui vemos qual vende mais.</p>
+<div class="aviso" id="aviso" hidden>Dados de vendas atrasados. Os números abaixo são os últimos que deram certo.</div>
+<div class="cols">
+  <section class="col" id="c-v2"><h2>v2</h2></section>
+  <section class="col" id="c-v3"><h2>v3</h2></section>
+</div>
+<div class="frente" id="frente">Carregando…</div>
+<p class="rodape" id="rodape"></p>
+</main>
+<script>
+(function(){
+  var ROT=[
+    ["Visitas (pessoas diferentes)","unicos",null],
+    ["Cliques no botão de compra","cliques","taxa_clique","de cada 100 pessoas clicam"],
+    ["Vendas aprovadas","vendas","taxa_conversao","de cada 100 pessoas compram"],
+    ["Custo por venda (estimado)","custo_por_venda",null]
+  ];
+  function n(x){return x===null||x===undefined?"sem dado":String(x).replace(".",",")}
+  function pc(x){return x===null||x===undefined?"":(String(x).replace(".",",")+"%")}
+  function brl(x){if(x===null||x===undefined)return "sem vendas ainda";return "R$ "+x.toFixed(2).replace(".",",")}
+  function monta(id,d){
+    var el=document.getElementById(id),h=el.firstChild.outerHTML;
+    ROT.forEach(function(r){
+      var v=r[1]==="custo_por_venda"?brl(d.custo_por_venda):n(d[r[1]]);
+      var extra="";
+      if(r[2]){var t=d[r[2]];extra='<div class="peq">'+(t===null||t===undefined?"":pc(t)+" "+r[3])+'</div>'}
+      h+='<div class="item"><div class="rot">'+r[0]+'</div><div class="num">'+v+'</div>'+extra+'</div>';
+    });
+    el.innerHTML=h;
+  }
+  function erro(){
+    document.getElementById("frente").textContent="Placar fora do ar por enquanto. Tente de novo daqui a pouco.";
+  }
+  fetch("placar.json?t="+Date.now(),{cache:"no-store"}).then(function(r){if(!r.ok)throw 0;return r.json()}).then(function(j){
+    monta("c-v2",j.v2);monta("c-v3",j.v3);
+    var f=document.getElementById("frente");
+    f.innerHTML=(j.frente||"Ainda cedo para decidir")+(j.frente_detalhe?"<small>"+j.frente_detalhe+"</small>":"");
+    document.getElementById("aviso").hidden=!(j.vendas_atrasadas||j.gasto_atrasado||j.contador_atrasado);
+    document.getElementById("rodape").innerHTML="Atualizado às "+j.atualizado_hhmm+"<br>Teste começou em "+j.inicio_texto;
+  }).catch(erro);
+})();
+</script>
+</body>
+</html>
