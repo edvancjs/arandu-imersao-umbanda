@@ -1,19 +1,19 @@
 {
  "v2": {
-  "visitas": 117,
-  "unicos": 105,
+  "visitas": 122,
+  "unicos": 110,
   "cliques": 13,
   "vendas": 5,
-  "taxa_clique": 12.4,
-  "taxa_conversao": 4.8,
+  "taxa_clique": 11.8,
+  "taxa_conversao": 4.5,
   "custo_por_venda": 0.0
  },
  "v3": {
-  "visitas": 136,
-  "unicos": 83,
+  "visitas": 142,
+  "unicos": 89,
   "cliques": 5,
   "vendas": 0,
-  "taxa_clique": 6.0,
+  "taxa_clique": 5.6,
   "taxa_conversao": 0.0,
   "custo_por_venda": null
  },
@@ -23,7 +23,7 @@
  "contador_atrasado": false,
  "frente": "Ainda cedo para decidir",
  "frente_detalhe": "Precisa de 30 vendas de cada lado. Hoje: v2 com 5, v3 com 0. Na frente por enquanto: v2 (ainda pode ser sorte).",
- "atualizado_em": "2026-11-15T18:30:01-03:00",
- "atualizado_hhmm": "18:30",
+ "atualizado_em": "2026-11-15T19:00:01-03:00",
+ "atualizado_hhmm": "19:00",
  "inicio_texto": "14/11 às 19h01"
 }
