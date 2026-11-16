@@ -18,8 +18,8 @@
     try{document.cookie=K+'='+x+'; max-age=7776000; path=/; SameSite=Lax';}catch(e){}
   }
   try{
-    if(m){v=m[1];gravar(v);}else{v=ler();}
-    if(v!=='v2'&&v!=='v3'){v=(Math.random()<0.5)?'v2':'v3';gravar(v);}
+    /* TESTE ENCERRADO em 16/11: 100% na /v2 (ignora sorteio antigo e ?ab=v3). Para reativar, ver commit anterior. */
+    v='v2';gravar(v);
   }catch(e){v='v2';}
   window.__AB={v:v,redirect:false};
   if(v==='v3'){
