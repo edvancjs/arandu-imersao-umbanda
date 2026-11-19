@@ -20,10 +20,10 @@
  "gasto_fria": 493.7,
  "vendas_atrasadas": false,
  "gasto_atrasado": false,
- "contador_atrasado": true,
+ "contador_atrasado": false,
  "frente": "Ainda cedo para decidir",
  "frente_detalhe": "Precisa de 30 vendas de cada lado. Hoje: v2 com 13, v3 com 1. Na frente por enquanto: v2 (ainda pode ser sorte).",
- "atualizado_em": "2026-11-19T13:30:01-03:00",
- "atualizado_hhmm": "13:30",
+ "atualizado_em": "2026-11-19T14:00:01-03:00",
+ "atualizado_hhmm": "14:00",
  "inicio_texto": "14/11 às 19h01"
 }
