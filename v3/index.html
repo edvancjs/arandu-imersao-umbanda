@@ -1,15 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>O que você sente tem nome. E tem explicação. | Imersão Umbanda Natural</title>
-<meta name="description" content="Em 2 dias, com fundamento teológico e sem misticismo vazio, você entende o que sente.">
-<meta name="robots" content="noindex, nofollow">
-<meta name="theme-color" content="#333C24">
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-
 <!-- Pixel Meta 221011049735408: PageView ao carregar, InitiateCheckout no clique dos botões -->
 <script>
 !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
@@ -17,382 +8,684 @@ fbq('init','221011049735408');
 fbq('track','PageView',{page_variant:'v3'});
 </script>
 <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=221011049735408&ev=PageView&cd%5Bpage_variant%5D=v3&noscript=1" alt=""></noscript>
-
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- Página v3 da IUN13 no modelo do kit (base-arandu.html). Só conteúdo trocado; CSS do kit. -->
+<title>O que você sente tem nome. E tem explicação. | Imersão Umbanda Natural</title>
+<meta name="description" content="Em 2 dias, com fundamento teológico e sem misticismo vazio, você entende o que sente.">
+<meta name="robots" content="noindex, nofollow"><!-- PRÉVIA: trocar para index só após o ok do Edvan -->
+<meta name="theme-color" content="#333C24">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:type" content="website">
+<meta property="og:title" content="O que você sente tem nome. E tem explicação. | Imersão Umbanda Natural">
+<meta property="og:description" content="Em 2 dias, com fundamento teológico e sem misticismo vazio, você entende o que sente.">
+<meta property="og:image" content="https://imersao.aranduacademy.com.br/assets-kit/img/og-image.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/png" sizes="32x32" href="../assets-kit/img/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../assets-kit/img/favicon-16.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
-:root{
-  --bg:#FAFAF7; --bg-soft:#F1E9D8; --bg-deep:#333C24; --ink:#2B2B2A; --ink-soft:#4A463F;
-  --line:#E4DCC8; --cta:#B5652E; --cta-deep:#954F20; --accent:#55643C; --lime:#F1D9A8;
-}
-*{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
-body{font-family:'Inter',-apple-system,"Segoe UI",Roboto,sans-serif;font-size:20px;line-height:1.55;color:var(--ink);background:var(--bg);padding-top:84px;padding-bottom:96px}
-h1,h2,h3{font-family:'Fraunces',Georgia,serif;line-height:1.2;color:var(--bg-deep)}
-h1{font-size:34px}
-h2{font-size:30px;margin-bottom:18px}
-h3{font-size:24px;margin-bottom:6px}
-p{margin-bottom:14px}
-img{max-width:100%;height:auto;display:block}
-.wrap{max-width:760px;margin:0 auto;padding:0 20px}
-section{padding:40px 0}
-.soft{background:var(--bg-soft)}
-.deep{background:var(--bg-deep);color:#F4F7EE}
-.deep h2,.deep h3{color:#fff}
+  :root{
+    --bg: #FAFAF7;
+    --bg-soft: #F1E9D8;
+    --ink: #2B2B2A;
+    --ink-soft: #6B665D;
+    --ink-faint: #97907F;
+    --olive: #55643C;
+    --olive-deep: #333C24;
+    --olive-line: #DCE2CC;
+    --cta: #B5652E;
+    --cta-deep: #8F4E22;
+    --line: #E6DECB;
+    --white: #FFFFFF;
+    --sand: #E7C8A8;
+    --radius: 18px;
+    --container-max: 1240px;
+    --gap-col: 40px;
+    --pad-x: 24px;
+    --pad-y: 28px;
+  }
 
-/* BLOCO 1: faixa fixa no topo */
-#faixa{position:fixed;top:0;left:0;right:0;z-index:50;background:var(--bg-deep);color:#fff;min-height:64px;display:flex;align-items:center;justify-content:center;text-align:center;padding:6px 12px;font-size:18px;line-height:1.3;box-shadow:0 2px 8px rgba(0,0,0,.25)}
-#faixa b{color:var(--lime)}
-#faixa .tempo{white-space:nowrap}
+  *{ box-sizing:border-box; }
+  html{ scroll-behavior:smooth; font-size:112.5%; } /* base 18px: público 40+. NÃO aumentar sem pedido explícito */
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--ink);
+    font-family:'Inter', -apple-system, "Segoe UI", Roboto, sans-serif;
+    font-size:1rem;
+    line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+  }
+  img{ max-width:100%; display:block; }
+  h1,h2,h3{
+    font-family:'Fraunces', Georgia, 'Times New Roman', serif;
+    font-weight:600;
+    line-height:1.2;
+    margin:0 0 16px;
+    color:var(--ink);
+  }
+  p{ margin:0 0 16px; }
+  ul{ margin:0; padding:0; list-style:none; }
 
-/* botão */
-.btn{display:block;width:100%;min-height:64px;padding:16px 20px;background:var(--cta);color:#fff;text-align:center;text-decoration:none;font-weight:700;font-size:21px;letter-spacing:.3px;border-radius:14px;box-shadow:0 4px 0 var(--cta-deep);margin:22px 0 6px}
-.btn:hover,.btn:focus{background:var(--cta-deep)}
-.btn-wrap{max-width:520px;margin:0 auto}
+  /* ===== PRIMITIVAS DE LAYOUT (todas as seções usam, sem exceção) ===== */
+  .section{ padding-block:var(--pad-y); }
+  .section-dark{ background:var(--olive-deep); color:#F3F1E8; }
+  .section-dark h2, .section-dark h3{ color:#FFFFFF; }
+  .section-soft{ background:var(--bg-soft); }
 
-/* BLOCO 2 */
-.etiqueta{border-radius:14px!important;display:inline-block;line-height:1.3;background:var(--bg-deep);color:#fff;font-size:17px;font-weight:600;padding:6px 14px;border-radius:999px;margin-bottom:16px}
-.hero-img{border-radius:16px;margin:0 0 14px;width:100%;aspect-ratio:16/9;object-fit:cover;object-position:50% 22%}
-.sub{font-size:21px;margin:12px 0 12px}
-.datas{background:#fff;border:2px solid var(--line);border-radius:14px;padding:14px 18px;margin-bottom:18px}
-.datas p{margin:0 0 4px}
-.preco{text-align:center;margin:10px 0}
-.preco .de{font-size:19px;color:var(--ink-soft)}
-.preco .de s{color:var(--ink-soft)}
-.preco .valor{font-family:'Fraunces',serif;font-weight:700;font-size:52px;color:var(--bg-deep);line-height:1.1}
-.preco .parc{font-size:21px;font-weight:600}
-.nota{font-size:20px;text-align:center;margin-top:10px}
+  .container{ max-width:var(--container-max); margin:0 auto; padding-inline:var(--pad-x); }
 
-/* listas */
-ul.marca{list-style:none}
-ul.marca li{padding-left:34px;position:relative;margin-bottom:14px}
-ul.marca li::before{content:"";position:absolute;left:4px;top:.5em;width:14px;height:14px;border-radius:50%;background:var(--cta)}
-ul.nao li::before{background:var(--accent)}
-.destaque{font-family:'Fraunces',serif;font-size:24px;font-weight:600;color:var(--bg-deep);margin-top:10px}
+  /* Seção centralizada (sem foto ao lado): usa .center dentro do .container */
+  .center{ text-align:center; }
+  .prose{ max-width:640px; margin:0 auto; }
+  .prose.wide{ max-width:860px; }
+  .prose.left{ margin:0; }
 
-/* BLOCO 4 */
-.quote{font-family:'Fraunces',serif;font-style:italic;font-size:26px;color:var(--lime);margin:16px 0}
-.deep img{border-radius:16px;margin-bottom:20px}
+  .split{ display:grid; gap:var(--gap-col); align-items:center; }
+  .split > *{ min-width:0; }
 
-/* BLOCO 5 */
-.dia{background:#fff;border-left:6px solid var(--cta);border-radius:10px;padding:16px 18px;margin-bottom:16px}
+  .tag{
+    display:inline-block; font-size:.78rem; font-weight:600; letter-spacing:.08em; text-transform:uppercase;
+    color:var(--olive); background:var(--olive-line); padding:6px 14px; border-radius:999px; margin-bottom:16px;
+  }
+  .section-dark .tag{ background:rgba(255,255,255,.12); color:#E7E2CC; }
 
-/* BLOCO 7 */
-.faixa-fotos{display:grid;grid-template-columns:1fr;gap:12px;margin:10px 0 18px}
-.faixa-fotos img{border-radius:12px;width:100%;aspect-ratio:16/10;object-fit:cover}
-.aviso{font-size:18px;color:var(--ink-soft);border-top:1px solid var(--line);padding-top:12px}
-.depo{background:#fff;border-radius:12px;padding:16px 18px;margin-bottom:14px;font-size:20px}
-.depo cite{display:block;margin-top:8px;font-weight:700;font-style:normal}
-#depoimentos[hidden]{display:none}
+  h1{ font-size:2.05rem; }
+  h2{ font-size:1.75rem; }
+  h3{ font-size:1.25rem; }
+  .lede{ font-size:1.08rem; color:var(--ink-soft); }
+  .lede.strong{ font-weight:600; color:var(--ink); }
+  .section-dark .lede{ color:#D7D3C2; }
+  .section-dark .lede.strong{ color:#fff; }
+  .kicker{ font-weight:600; color:var(--ink); margin-bottom:16px; } /* linha de data/local acima do h1 */
 
-/* BLOCO 9 */
-details{background:#fff;border:2px solid var(--line);border-radius:12px;margin-bottom:12px}
-summary{cursor:pointer;list-style:none;padding:16px 48px 16px 18px;font-weight:700;font-size:21px;position:relative;min-height:60px}
-summary::-webkit-details-marker{display:none}
-summary::after{content:"+";position:absolute;right:18px;top:10px;font-size:32px;color:var(--cta);line-height:1}
-details[open] summary::after{content:"\2212"}
-details div{padding:0 18px 16px}
+  .btn{
+    display:inline-block; background:var(--cta); color:#fff; font-weight:700; font-size:1rem; text-decoration:none;
+    padding:16px 26px; border-radius:12px; text-align:center; box-shadow:0 8px 20px rgba(181,101,46,.28);
+    transition:background .15s ease, transform .1s ease;
+  }
+  .btn:hover{ background:var(--cta-deep); }
+  .btn:active{ transform:translateY(1px); }
+  .btn-block{ display:block; width:100%; }
+  .btn-center{ text-align:center; margin:20px 0 4px; }
 
-footer{padding:30px 0 20px;font-size:17px;color:var(--ink-soft);text-align:center}
-footer p{margin-bottom:8px}
+  .trustline{ margin-top:16px; font-size:.82rem; letter-spacing:.06em; text-transform:uppercase; color:var(--ink-faint); font-weight:600; }
+  .section-dark .trustline{ color:#B9B49E; }
 
-/* botão fixo no rodapé (celular) */
-#fixo{position:fixed;left:0;right:0;bottom:0;z-index:50;background:rgba(250,250,247,.97);padding:10px 14px;box-shadow:0 -2px 10px rgba(0,0,0,.18)}
-#fixo .btn{margin:0 auto;max-width:520px}
+  /* ===== LOTE: faixa estática no topo + contador (oferta real, prazo fixo) ===== */
+  .lote-bar{ background:var(--olive-deep); color:#F3F1E8; font-size:.88rem; }
+  .lote-bar .container{
+    display:flex; flex-wrap:wrap; align-items:center; justify-content:center; gap:6px 18px;
+    padding-block:10px; text-align:center; line-height:1.4;
+  }
+  .lote-bar b{ color:var(--sand); }
+  .lote-bar .cd-inline{ font-variant-numeric:tabular-nums; font-weight:700; color:#fff; }
+  .lote-bar .btn{ padding:8px 16px; font-size:.82rem; border-radius:10px; box-shadow:none; }
 
-@media(min-width:900px){
-  body{font-size:21px;padding-bottom:0}
-  h1{font-size:44px} h2{font-size:36px}
-  .wrap{max-width:820px}
-  .faixa-fotos{grid-template-columns:1fr 1fr}
-  #fixo{display:none}
-  #faixa{font-size:20px}
-}
+  .countdown{ display:flex; justify-content:center; gap:10px; margin:18px 0 8px; }
+  .cd-item{ min-width:68px; padding:12px 6px; border-radius:14px; background:rgba(255,255,255,.10); border:1px solid rgba(255,255,255,.16); text-align:center; }
+  .cd-item b{ display:block; font-family:'Fraunces',serif; font-size:1.7rem; line-height:1.1; color:#fff; font-variant-numeric:tabular-nums; }
+  .cd-item span{ font-size:.72rem; letter-spacing:.08em; text-transform:uppercase; color:#CFCAB6; }
+  .lote-encerrado-msg{ display:none; }
+  body.lote-encerrado .so-aberto{ display:none !important; }
+  body.lote-encerrado .lote-encerrado-msg{ display:block; }
 
-/* celular: primeira tela enxuta (linha 12x acima do botão fixo) e menos espaço vazio */
-@media(max-width:899px){
-  body{font-size:19px;line-height:1.5;padding-top:58px;padding-bottom:78px}
-  h1{font-size:30px} h2{font-size:27px;margin-bottom:14px} h3{font-size:22px}
-  p{margin-bottom:12px}
-  section{padding:28px 0}
-  #faixa{min-height:50px;font-size:15px;padding:4px 10px;line-height:1.25}
-  header .wrap{padding-top:12px!important}
-  .etiqueta{font-size:15px;padding:5px 12px;margin-bottom:10px}
-  .hero-img{aspect-ratio:2/1;margin-bottom:10px;object-position:50% 25%}
-  .sub{font-size:19px;margin:8px 0}
-  .preco{margin:6px 0}
-  .preco .de{font-size:17px}
-  .preco .valor{font-size:44px}
-  .preco .parc{font-size:19px}
-  .datas{padding:10px 14px;margin-bottom:12px}
-  .btn{min-height:56px;padding:12px 14px;font-size:19px;margin:16px 0 6px}
-  #fixo{padding:8px 12px}
-  #fixo .btn{font-size:17px;min-height:52px;padding:10px 8px;margin:0 auto}
-  ul.marca li{margin-bottom:10px}
-  .destaque{font-size:22px}
-  .quote{font-size:23px;margin:10px 0}
-  .deep img{margin-bottom:14px}
-  .dia{padding:12px 16px;margin-bottom:12px}
-  .faixa-fotos{gap:8px;margin:8px 0 12px}
-  .faixa-fotos img{aspect-ratio:2/1}
-  summary{font-size:19px;min-height:54px;padding:14px 44px 14px 16px}
-  details{margin-bottom:10px}
-  footer{padding:20px 0 12px}
-}
-@media(max-width:380px){
-  #faixa{font-size:14px}
-  h1{font-size:28px}
-  .hero-img{aspect-ratio:5/2;margin-bottom:8px}
-  .sub{font-size:18px;margin:6px 0}
-  .etiqueta{margin-bottom:8px}
-  .preco .valor{font-size:40px}
-}
+  /* ===== HERO (mosaico de 3 fotos rotacionadas) ===== */
+  .hero-mosaic{ position:relative; height:190px; }
+  .hero-mosaic img{ position:absolute; object-fit:cover; border-radius:var(--radius); box-shadow:0 14px 30px rgba(43,43,42,.18); border:4px solid var(--white); }
+  .hero-mosaic .m1{ width:56%; height:190px; left:0; top:0; transform:rotate(-2deg); z-index:2; }
+  .hero-mosaic .m2{ width:38%; height:130px; right:0; top:0; transform:rotate(3deg); z-index:1; }
+  .hero-mosaic .m3{ width:34%; height:110px; right:2%; bottom:-56px; transform:rotate(-4deg); z-index:3; }
+
+  /* ===== IDENTIFICAÇÃO (lista com divisórias + foto) ===== */
+  .id-list{ margin:18px 0; }
+  .id-list li{ display:flex; gap:12px; padding:14px 0; border-bottom:1px solid var(--line); font-size:1.02rem; }
+  .id-list li:last-child{ border-bottom:none; }
+  .id-dot{ flex:none; width:8px; height:8px; border-radius:50%; background:var(--olive); margin-top:9px; }
+  .id-photo{ border-radius:var(--radius); overflow:hidden; box-shadow:0 14px 30px rgba(43,43,42,.14); }
+  .id-photo img{ width:100%; height:280px; object-fit:cover; object-position:top; }
+
+  /* Foto única ao lado do texto (reframe, causa, ponte, objeção, fechamento) */
+  .block-photo{ border-radius:var(--radius); overflow:hidden; box-shadow:0 14px 30px rgba(43,43,42,.16); }
+  .block-photo img{ width:100%; height:240px; object-fit:cover; object-position:50% 20%; }
+
+  .photo-portrait img{ max-height:440px; }  /* foto em pé (retrato): evita bloco gigante no desktop */
+
+  /* ===== CARROSSEL DE DEPOIMENTOS ===== */
+  .testi-track{ display:flex; overflow-x:auto; scroll-snap-type:x mandatory; -webkit-overflow-scrolling:touch; scrollbar-width:none; }
+  .testi-track::-webkit-scrollbar{ display:none; }
+  .testi-card{ flex:0 0 100%; scroll-snap-align:start; background:var(--white); border:1px solid var(--line); border-radius:var(--radius); padding:26px; min-height:180px; }
+  .testi-card p{ font-family:'Fraunces', serif; font-style:italic; font-size:1.05rem; color:var(--ink); margin:0 0 14px; }
+  .testi-who{ display:flex; align-items:center; gap:10px; }
+  .testi-avatar{ width:36px; height:36px; border-radius:50%; object-fit:cover; flex:none; }
+  .testi-initial{ display:flex; align-items:center; justify-content:center; color:#fff; font-family:'Fraunces', serif; font-weight:600; font-size:.95rem; }
+  .testi-author{ font-weight:600; color:var(--olive); font-size:.9rem; }
+  .testi-nav{ display:flex; align-items:center; justify-content:center; gap:16px; margin-top:16px; }
+  .testi-btn{ background:var(--white); border:1px solid var(--line); width:36px; height:36px; border-radius:50%; font-size:1.2rem; line-height:1; cursor:pointer; color:var(--ink); }
+  .testi-btn:hover{ background:var(--bg-soft); }
+  .testi-dots{ display:flex; gap:8px; }
+  .testi-dot{ width:8px; height:8px; border-radius:50%; border:none; background:var(--line); cursor:pointer; padding:0; }
+  .testi-dot.active{ background:var(--cta); }
+
+  /* ===== CITAÇÃO ===== */
+  blockquote{
+    margin:20px 0; padding:16px 0 16px 22px; border-left:3px solid var(--cta);
+    font-family:'Fraunces', serif; font-size:1.25rem; font-style:italic; color:var(--ink);
+  }
+  .section-dark blockquote{ border-left-color:var(--sand); color:#fff; }
+  blockquote cite{ display:block; margin-top:10px; font-family:'Inter',sans-serif; font-style:normal; font-size:.95rem; color:var(--ink-faint); }
+
+  /* ===== CONTEÚDO / DIAS (cards com foto, em fundo escuro) ===== */
+  .dias{ display:grid; gap:20px; margin:20px 0; }
+  .dia-card{ background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.14); border-radius:var(--radius); padding:22px; text-align:center; }
+  .dia-card img{ border-radius:12px; margin-bottom:16px; height:190px; width:100%; object-fit:cover; object-position:50% 20%; }
+  .dia-card .dia-num{ font-size:.85rem; letter-spacing:.08em; text-transform:uppercase; color:var(--sand); font-weight:700; margin-bottom:6px; }
+  .dia-card p{ color:#F3F1E8; margin:0; }
+  .incluido{ margin:18px auto; max-width:420px; }
+  .incluido li{ display:flex; gap:10px; padding:6px 0; text-align:left; }
+  .check{ flex:none; color:var(--sand); font-weight:700; }
+  .nota{ font-size:1rem; font-style:italic; color:#CFCAB6; }
+
+  /* ===== PROVA SOCIAL ===== */
+  .stats{ display:grid; grid-template-columns:1fr 1fr; gap:16px; margin:20px 0 4px; max-width:420px; }
+  .stat{ background:var(--bg-soft); border-radius:var(--radius); padding:20px 16px; text-align:center; }
+  .stat b{ display:block; font-family:'Fraunces',serif; font-size:1.8rem; color:var(--olive); }
+  .stat span{ font-size:.85rem; color:var(--ink-soft); }
+  .prova-mosaic{ display:grid; grid-template-columns:1fr 1fr; gap:10px; margin:16px 0 0; }
+  .prova-mosaic img{ border-radius:14px; height:140px; object-fit:cover; box-shadow:0 8px 18px rgba(43,43,42,.12); }
+  .prova-mosaic .wide{ grid-column:1 / -1; height:180px; }
+
+  /* ===== OBJEÇÃO (3 cards) ===== */
+  .cards3{ display:grid; gap:14px; margin:18px 0; }
+  .card3{ background:var(--white); border:1px solid var(--line); border-radius:14px; padding:18px; }
+  .card3 b{ display:block; margin-bottom:4px; }
+
+  /* ===== FAIXA DE DATAS (cor do CTA) ===== */
+  .datas-banner{ background:var(--cta); text-align:center; }
+  .datas-banner h3{ color:#fff; margin-bottom:24px; }
+  .datas-cols{ display:grid; gap:24px; max-width:820px; margin:0 auto; }
+  .datas-cols > div{ display:flex; flex-direction:column; align-items:center; gap:4px; color:#fff; }
+  .datas-icon{ font-size:1.4rem; margin-bottom:4px; }
+  .datas-cols strong{ font-size:1rem; }
+  .datas-cols span{ color:rgba(255,255,255,.85); font-size:.88rem; }
+
+  /* ===== INVESTIMENTO ===== */
+  .preco-box{ background:rgba(255,255,255,.07); border:1px solid rgba(255,255,255,.16); border-radius:var(--radius); padding:30px 24px; text-align:center; margin:20px 0 0; }
+  .lote-selo{ display:inline-block; font-size:.78rem; font-weight:700; letter-spacing:.08em; text-transform:uppercase; color:var(--olive-deep); background:var(--sand); padding:6px 14px; border-radius:999px; margin-bottom:14px; }
+  .preco-de{ text-decoration:line-through; color:#B9B49E; font-size:1rem; }
+  .preco-principal{ font-family:'Fraunces',serif; font-size:2.4rem; color:#fff; margin:6px 0; }
+  .preco-vista{ color:var(--sand); font-weight:600; margin-bottom:18px; }
+  .preco-lista{ text-align:left; max-width:280px; margin:0 auto 22px; }
+  .preco-lista li{ padding:5px 0; }
+  .preco-aviso{ font-size:.92rem; color:#CFCAB6; margin:14px 0 0; }
+
+  /* ===== FAQ ===== */
+  details{ border-bottom:1px solid var(--line); padding:16px 0; }
+  details summary{ cursor:pointer; font-weight:600; list-style:none; display:flex; justify-content:space-between; align-items:center; gap:12px; font-size:1rem; }
+  details summary::-webkit-details-marker{ display:none; }
+  details summary::after{ content:'+'; flex:none; font-size:1.3rem; color:var(--olive); font-weight:400; }
+  details[open] summary::after{ content:'–'; }
+  details p{ margin-top:12px; margin-bottom:0; color:var(--ink-soft); font-size:.95rem; }
+
+  footer{ background:#232A18; color:#B9B49E; text-align:center; padding:28px 24px; font-size:.85rem; }
+
+  /* ===== CTA FIXO (só celular; aparece depois que o hero sai da tela) ===== */
+  .cta-sticky{
+    position:fixed; left:0; right:0; bottom:0; background:var(--white); border-top:1px solid var(--line);
+    padding:10px 14px; box-shadow:0 -8px 20px rgba(43,43,42,.10); z-index:50;
+    transform:translateY(120%); transition:transform .25s ease;
+  }
+  .cta-sticky.show{ transform:translateY(0); }
+  .cta-sticky .btn{ padding:13px 20px; font-size:.92rem; }
+
+  /* ===== BREAKPOINTS ===== */
+  @media (min-width:768px){ :root{ --pad-x:48px; } }
+
+  @media (min-width:860px){
+    :root{ --pad-y:44px; --gap-col:56px; }
+    h1{ font-size:2.5rem; }
+    h2{ font-size:2rem; }
+    .split{ grid-template-columns:1fr; }
+    .split.split-text-first{ grid-template-columns:1.2fr 1fr; }
+    .split.split-photo-first{ grid-template-columns:1fr 1.2fr; }
+    .hero-mosaic{ height:440px; }
+    .hero-mosaic .m1{ width:60%; height:320px; left:0; top:20px; }
+    .hero-mosaic .m2{ width:42%; height:210px; right:0; top:0; }
+    .hero-mosaic .m3{ width:38%; height:180px; right:6%; bottom:0; }
+    .id-photo img{ height:100%; min-height:360px; }
+    .block-photo img{ height:100%; min-height:320px; }
+    .dias{ grid-template-columns:1fr 1fr; }
+    .datas-cols{ grid-template-columns:1fr 1fr 1fr; }
+    .cd-item{ min-width:84px; }
+    .cd-item b{ font-size:2rem; }
+    .cta-sticky{ display:none; }
+  }
+  @media (min-width:1200px){ :root{ --pad-x:72px; } }
 </style>
 </head>
 <body>
 
-<!-- BLOCO 1: faixa fixa. Textos e datas vêm da configuração (CONFIG) lá embaixo -->
-<div id="faixa" role="status">
-  <span id="faixa-txt">Ingresso a R$ <b data-preco>29,90</b> até <span data-ate-txt>segunda, 16/11, às 23h59</span>. Depois, o valor muda. <span class="tempo">Faltam: <b data-tempo>--</b></span></span>
+<!-- BLOCO 0 — FAIXA DO LOTE (estática). Números vêm do CONFIG. -->
+<div class="lote-bar" id="loteBar">
+  <div class="container">
+    <span class="so-aberto"><b data-fill="loteNome">Ingresso desta semana</b>: <span data-fill="precoVista">R$ 39,90</span> à vista ou <span data-fill="parcelas">12x de R$ 3,90</span>. Vale até <span data-fill="prazoTexto">segunda, 23/11</span>.</span>
+    <span class="so-aberto">Termina em: <span class="cd-inline" data-countdown-inline>--d --h --m --s</span></span>
+    <a href="#investimento" class="btn so-aberto">GARANTIR MEU INGRESSO</a>
+    <span class="lote-encerrado-msg">O prazo deste valor terminou.</span>
+  </div>
 </div>
 
-<!-- BLOCO 2: primeira tela -->
-<header>
-  <div class="wrap" style="padding-top:20px">
-    <span class="etiqueta">Imersão Umbanda Natural | 100% online e ao vivo</span>
-    <img class="hero-img" src="img/hero.jpg" alt="Ricardo Di Napoli conversando com uma aluna durante o Congresso Arandu" width="1200" height="801" fetchpriority="high">
-    <h1>O que você sente tem nome. E tem explicação.</h1>
-    <p class="sub">Em 2 dias, com fundamento teológico e sem misticismo vazio, você entende o que sente.</p>
-    <div class="preco" data-bloco-preco>
-      <div class="de">De <s>R$ 497,00</s> por</div>
-      <div class="valor">R$ <span data-preco>29,90</span></div>
-      <div class="parc">à vista ou 12x de R$ <span data-parcela>2,90</span></div>
+
+<!-- BLOCO 1 — HERO | CLARO | mosaico de 3 fotos -->
+<section class="section" id="hero">
+  <div class="container split split-text-first">
+    <div>
+      <span class="tag">Imersão Umbanda Natural | 100% online e ao vivo</span>
+      <p class="kicker">Sexta, 04/12, das 18h30 às 21h30 | Sábado, 05/12, das 9h às 15h</p>
+      <h1>O que você sente tem nome. E tem explicação.</h1>
+      <p class="lede">Em 2 dias, com fundamento teológico e sem misticismo vazio, você entende o que sente.</p>
+      <a href="#investimento" class="btn btn-block">QUERO GARANTIR MINHA VAGA</a>
+      <p class="trustline">Ao vivo pelo Zoom, com o Ricardo Di Napoli | Horário de Brasília | Você não precisa mudar de crença</p>
     </div>
-    <div class="datas">
-      <p><b>Sexta, 04/12, das 18h30 às 21h30</b></p>
-      <p><b>Sábado, 05/12, das 9h às 15h</b></p>
-      <p>Ao vivo pelo Zoom, com o Ricardo Di Napoli. Horário de Brasília.</p>
+    <div class="hero-mosaic">
+      <img class="m1" src="../assets-kit/img/cronograma-2.jpg" alt="Ricardo Di Napoli falando ao microfone diante do painel do evento" style="object-position:30% 20%;">
+      <img class="m2" src="../assets-kit/img/prova-2.jpg" alt="Fila de alunos esperando o autógrafo de Ricardo" style="object-position:50% 30%;">
+      <img class="m3" src="../assets-kit/img/prova-1.jpg" alt="Ricardo autografando livro para um aluno" style="object-position:50% 35%;">
     </div>
-    <div class="btn-wrap"><a class="btn" href="https://pagamento.aranduacademy.com.br/pay/imersao-umbanda-natural-oficial" data-compra>QUERO GARANTIR MINHA VAGA</a></div>
-    <p class="nota">Você não precisa mudar de crença.</p>
-  </div>
-</header>
-
-<!-- BLOCO 3: você se reconhece? -->
-<section class="soft">
-  <div class="wrap">
-    <h2>Se algum destes momentos já aconteceu com você</h2>
-    <ul class="marca">
-      <li>Você soube de algo antes de acontecer e não teve com quem conversar.</li>
-      <li>Você já chorou sem entender o motivo e disse a si mesma que era cansaço.</li>
-      <li>Você entra num lugar e percebe o clima antes de alguém falar.</li>
-      <li>Você teve um sonho tão real que passou o dia pensando nele.</li>
-      <li>Toda vez que pesquisa o que sente, volta com mais dúvida do que resposta.</li>
-    </ul>
-    <p class="destaque">Isso não é coincidência. Também não é loucura. Não é falta de dom. É falta de fundamento.</p>
-    <div class="btn-wrap"><a class="btn" href="https://pagamento.aranduacademy.com.br/pay/imersao-umbanda-natural-oficial" data-compra>QUERO GARANTIR MINHA VAGA</a></div>
   </div>
 </section>
 
-<!-- BLOCO 4: quem conduz -->
-<section class="deep">
-  <div class="wrap">
-    <img src="img/ricardo.jpg" alt="Ricardo Di Napoli falando ao vivo no Congresso Arandu" width="1200" height="801" loading="lazy">
-    <h2>Quem conduz a Imersão</h2>
-    <h3>Ricardo Di Napoli</h3>
-    <p>40 anos de vivência na Umbanda. Mais de 20 anos ensinando. Mais de 1.000 alunos formados em Teologia da Umbanda.</p>
-    <p class="quote">"Fora do conhecimento não há libertação."</p>
-    <p>Sacerdote, filósofo e teólogo, fundador do Movimento Umbanda Natural. Ele se define como universalista: ensina a Umbanda com fundamento e não converte ninguém.</p>
-  </div>
-</section>
 
-<!-- BLOCO 5: o que você vive nos 2 dias -->
-<section>
-  <div class="wrap">
-    <h2>Dois dias para entender o que você sente</h2>
-    <div class="dia">
-      <h3>Dia 1: Sintonia e Percepção</h3>
-      <p><b>Sexta, 04/12, das 18h30 às 21h30.</b></p>
-      <p>A lógica por trás da sensibilidade, da intuição e da chamada mediunidade, com vivências guiadas ao vivo.</p>
+<!-- BLOCO 2 — IDENTIFICAÇÃO | SOFT | texto + foto -->
+<section class="section section-soft" id="identificacao">
+  <div class="container split split-text-first">
+    <div>
+      <h2>Algum destes momentos já aconteceu com você?</h2>
+      <p class="lede strong">Isso não é coincidência. Também não é loucura.</p>
+      <ul class="id-list">
+        <li><span class="id-dot"></span><span>Você soube de algo antes de acontecer e não teve com quem conversar sobre isso.</span></li>
+        <li><span class="id-dot"></span><span>Você já chorou sem entender o motivo e disse que era só cansaço.</span></li>
+        <li><span class="id-dot"></span><span>Você entra em um lugar e percebe o clima antes de alguém falar uma palavra.</span></li>
+        <li><span class="id-dot"></span><span>Você teve um sonho tão real que passou o dia pensando nele.</span></li>
+        <li><span class="id-dot"></span><span>Você tem uma vontade constante de ajudar e acolher os outros, até quando ninguém pediu.</span></li>
+      </ul>
+      <div class="btn-center"><a href="#investimento" class="btn">QUERO GARANTIR MINHA VAGA</a></div>
     </div>
-    <div class="dia">
-      <h3>Dia 2: Entidades e Fundamentos</h3>
-      <p><b>Sábado, 05/12, das 9h às 15h.</b></p>
-      <p>As entidades espirituais da Umbanda e o que cada uma representa, de forma teológica, sem promessa de "revelação instantânea".</p>
+    <div class="id-photo"><img src="../assets-kit/img/identificacao.jpg" alt="Ricardo Di Napoli em evento, com o público" style="object-position:top;"></div>
+  </div>
+</section>
+
+
+<!-- BLOCO 3 — QUEBRA DE CRENÇA | ESCURO | foto + texto -->
+<section class="section section-dark" id="reframe">
+  <div class="container split split-photo-first">
+    <div class="block-photo"><img src="../assets-kit/img/hero-2.jpg" alt="Ricardo Di Napoli com alunos no Congresso Arandu" style="object-position:50% 20%;"></div>
+    <div>
+      <h2>Não é falta de dom. É falta de fundamento.</h2>
+      <p class="lede">Muita gente sente por anos e acha que o problema é ela. <strong>Não é.</strong> Falta o fundamento para entender o que sente.</p>
+      <div class="btn-center"><a href="#investimento" class="btn">QUERO GARANTIR MINHA VAGA</a></div>
     </div>
-    <p><b>Você leva:</b></p>
-    <ul class="marca">
-      <li>Acesso aos 2 dias, ao vivo, com interação direta com o Ricardo</li>
-      <li>Vivências guiadas de conexão e autoconhecimento</li>
-      <li>Grupo de acompanhamento durante a imersão</li>
-    </ul>
-    <p class="destaque">Nesses 2 dias você sai com mais clareza sobre o que é sensibilidade, o que é intuição e como caminhar com fundamento.</p>
-    <div class="btn-wrap"><a class="btn" href="https://pagamento.aranduacademy.com.br/pay/imersao-umbanda-natural-oficial" data-compra>QUERO GARANTIR MINHA VAGA</a></div>
   </div>
 </section>
 
-<!-- BLOCO 6: para quem é e o que não é -->
-<section class="soft">
-  <div class="wrap">
-    <h2>Para quem é</h2>
-    <ul class="marca">
-      <li>Para quem nunca foi a um terreiro, mas sente que precisa entender algo em si.</li>
-      <li>Para espíritas, kardecistas e pessoas de outras linhas, sem precisar mudar de crença.</li>
-      <li>Para umbandistas que nunca tiveram o fundamento explicado.</li>
-    </ul>
-    <p><b>Você não precisa ser médium.</b></p>
-    <h2 style="margin-top:28px">O que a Imersão não é</h2>
-    <ul class="marca nao">
-      <li>Não é consulta, adivinhação nem trabalho espiritual.</li>
-      <li>Não promete cura nem resultado que ninguém possa garantir.</li>
-      <li>Não pede que você largue a sua fé.</li>
-    </ul>
-  </div>
-</section>
 
-<!-- BLOCO 7: prova -->
-<section>
-  <div class="wrap">
-    <h2>Quem já esteve com o Ricardo</h2>
-    <p>Mais de 1.000 alunos formados em Teologia da Umbanda, em 40 anos de caminhada do Ricardo.</p>
-    <div class="faixa-fotos">
-      <img src="img/prova1.jpg" alt="Alunos aplaudindo durante o Congresso Arandu" width="1200" height="801" loading="lazy">
-      <img src="img/prova2.jpg" alt="Ricardo abraçando uma aluna no Congresso Arandu" width="1200" height="801" loading="lazy">
-      <img src="img/prova3.jpg" alt="Participantes sentados juntos no Congresso Arandu" width="1200" height="801" loading="lazy">
-      <img src="img/prova4.jpg" alt="Ricardo conversando com o público no Congresso Arandu" width="1200" height="801" loading="lazy">
-      <img src="img/prova5.jpg" alt="Ricardo recebendo alunos no Congresso Arandu" width="1200" height="801" loading="lazy">
+<!-- BLOCO 4 — CAUSA | CLARO | texto + foto -->
+<section class="section" id="causa">
+  <div class="container split split-text-first">
+    <div>
+      <h2>Por que a dúvida volta toda vez</h2>
+      <p>Toda vez que você pesquisa o que sente, volta com mais dúvida do que resposta. <strong>Falta alguém que explique com fundamento, do começo.</strong></p>
+      <div class="btn-center"><a href="#investimento" class="btn">QUERO GARANTIR MINHA VAGA</a></div>
     </div>
-    <!-- Espaço dos 3 depoimentos da Teologia. FICA ESCONDIDO até o Edvan autorizar.
-         Para liberar: tirar o atributo hidden da div abaixo e colar os 3 textos do banco (provas-e-depoimentos.md), sem mudar uma palavra. -->
-    <div id="depoimentos" hidden>
-      <div class="depo">"[DEPOIMENTO 1]"<cite>[Nome]</cite></div>
-      <div class="depo">"[DEPOIMENTO 2]"<cite>[Nome]</cite></div>
-      <div class="depo">"[DEPOIMENTO 3]"<cite>[Nome]</cite></div>
-      <p class="aviso">Estes depoimentos são de alunos da Formação em Teologia e Doutrina da Umbanda, do Ricardo. Não são da Imersão. Cada um conta a experiência de uma pessoa.</p>
+    <div class="block-photo"><img src="../assets-kit/img/prova-3.jpg" alt="Ricardo Di Napoli com alunos no Congresso Arandu" style="object-position:50% 20%;"></div>
+  </div>
+</section>
+
+
+<!-- BLOCO 5 — PONTE | SOFT | foto + texto -->
+<section class="section section-soft" id="ponte">
+  <div class="container split split-photo-first">
+    <div class="block-photo"><img src="../assets-kit/img/hero-3.jpg" alt="Alunos e Ricardo Di Napoli após a palestra" style="object-position:50% 20%;"></div>
+    <div>
+      <h2>Dois dias para entender o que você sente</h2>
+      <p>Nesses 2 dias você sai com mais clareza sobre o que é sensibilidade, o que é intuição e como caminhar com fundamento. <strong>Sem promessa de revelação instantânea. Sem atalho.</strong></p>
+      <div class="btn-center"><a href="#investimento" class="btn">QUERO GARANTIR MINHA VAGA</a></div>
     </div>
-    <p class="aviso">Fotos reais do Congresso Arandu.</p>
   </div>
 </section>
 
-<!-- BLOCO 8: preço e botão -->
-<section class="deep">
-  <div class="wrap" style="text-align:center">
-    <h2>Garanta seu lugar na Imersão</h2>
-    <div class="preco" data-bloco-preco>
-      <div class="de" style="color:#D6DCC4">De <s style="color:#D6DCC4">R$ 497,00</s> por</div>
-      <div class="valor" style="color:#fff">R$ <span data-preco>29,90</span> <span style="font-size:22px;font-weight:600">à vista</span></div>
-      <div class="parc">ou 12x de R$ <span data-parcela>2,90</span></div>
+
+<!-- BLOCO 6 — OS DOIS DIAS + INCLUÍDO | ESCURO | centralizada -->
+<section class="section section-dark" id="conteudo">
+  <div class="container center">
+    <div class="prose wide">
+      <div class="dias">
+        <div class="dia-card">
+          <img src="../assets-kit/img/cronograma-1.jpg" alt="Ricardo Di Napoli ao vivo, dia 1" style="object-position:50% 20%;">
+          <div class="dia-num">Dia 1, sexta, 04/12, das 18h30 às 21h30: Sintonia e Percepção</div>
+          <p>A lógica por trás da sensibilidade, da intuição e da chamada mediunidade, com vivências guiadas ao vivo.</p>
+        </div>
+        <div class="dia-card">
+          <img src="../assets-kit/img/objecao.jpg" alt="Ricardo Di Napoli ao vivo, dia 2" style="object-position:50% 20%;">
+          <div class="dia-num">Dia 2, sábado, 05/12, das 9h às 15h: Entidades e Fundamentos</div>
+          <p>As entidades espirituais da Umbanda e o que cada uma representa, de forma teológica, sem promessa de "revelação instantânea".</p>
+        </div>
+      </div>
+      <h3>O que está incluído:</h3>
+      <ul class="incluido">
+        <li><span class="check">✓</span><span>Acesso aos 2 dias, ao vivo, com interação direta com o Ricardo</span></li>
+        <li><span class="check">✓</span><span>Vivências guiadas de conexão e autoconhecimento</span></li>
+        <li><span class="check">✓</span><span>Grupo de acompanhamento durante a imersão</span></li>
+      </ul>
+      <p class="nota">A gravação dos 2 dias pode ser levada na hora de garantir o ingresso, por R$ 147,00. Ela é liberada em até 7 dias depois da imersão.</p>
+      <div class="btn-center"><a href="#investimento" class="btn">QUERO GARANTIR MINHA VAGA</a></div>
     </div>
-    <p data-bloco-preco>O ingresso a R$ <span data-preco>29,90</span> vale até <span data-ate-txt>segunda, 16/11, às 23h59</span>. Depois, o valor muda.</p>
-    <p>Faltam: <b data-tempo style="color:var(--lime)">--</b></p>
-    <div class="btn-wrap"><a class="btn" href="https://pagamento.aranduacademy.com.br/pay/imersao-umbanda-natural-oficial" data-compra>QUERO GARANTIR MINHA VAGA</a></div>
-    <p style="margin-top:14px">Na hora de garantir o ingresso, você pode levar também a gravação dos 2 dias por R$ 147,00. Ela é liberada em até 7 dias depois da imersão.</p>
   </div>
 </section>
 
-<!-- BLOCO 9: perguntas -->
-<section>
-  <div class="wrap">
-    <h2>Perguntas</h2>
-    <details><summary>Preciso ser médium ou ter ido a um terreiro?</summary><div>Não. Incorporação é só um dos temas.</div></details>
-    <details><summary>Sou de outra religião. Vão me pedir para largar minha fé?</summary><div>Não. A proposta é entender a Umbanda com fundamento. O Ricardo não converte ninguém.</div></details>
-    <details><summary>Vai ficar gravado?</summary><div>A Imersão é ao vivo. A gravação pode ser levada na hora de garantir o ingresso, por R$ 147,00.</div></details>
-    <details><summary>E se eu não puder estar?</summary><div>O ingresso é pessoal e intransferível. Faltar sem avisar não dá direito a troca nem reembolso. Avisando por e-mail com 7 dias ou mais de antecedência, você troca por outra data do mesmo evento em até 12 meses. Ingresso comprado a menos de 7 dias do evento não tem direito de arrependimento. Dúvidas: contato@aranduacademy.com.br</div></details>
-    <details><summary>Como eu assisto?</summary><div>Pelo Zoom, da sua casa, no computador ou no celular.</div></details>
+
+<!-- BLOCO 7 — PROVA SOCIAL | CLARO | números + depoimentos (só texto e primeiro nome) -->
+<section class="section" id="prova">
+  <div class="container split split-text-first">
+    <div>
+      <h2>Quem já esteve com o Ricardo</h2>
+      <p>Mais de 1.000 alunos formados em Teologia da Umbanda, em 40 anos de caminhada do Ricardo.</p>
+      <div class="stats">
+        <div class="stat"><b>40</b><span>anos de vivência na Umbanda</span></div>
+        <div class="stat"><b>20+</b><span>anos ensinando</span></div>
+        <div class="stat" style="grid-column:1 / -1;"><b>1.000+</b><span>alunos formados em Teologia da Umbanda</span></div>
+      </div>
+    </div>
+    <div>
+      <div class="testi-carousel">
+        <div class="testi-track" id="testiTrack">
+          <div class="testi-card">
+            <p>"Gostei da forma como ele abordava os assuntos, me sentindo em 'casa', percebendo o quanto tudo aquilo reverberava em mim."</p>
+            <div class="testi-who"><span class="testi-avatar testi-initial" style="background:var(--olive);">A</span><span class="testi-author">Andréa, aluna</span></div>
+          </div>
+          <div class="testi-card">
+            <p>"Muita clareza, muito material de apoio. O curso foi tão bom que vou fazer o segundo ano."</p>
+            <div class="testi-who"><span class="testi-avatar testi-initial" style="background:var(--cta);">D</span><span class="testi-author">Dirce, aluna</span></div>
+          </div>
+          <div class="testi-card">
+            <p>"Vejo a Umbanda com outro olhar, é tudo tão simples, verdadeiro, tranquilo, sem mistificação."</p>
+            <div class="testi-who"><img class="testi-avatar" src="../assets-kit/img/testi-micherla.jpg" alt="Micherla"><span class="testi-author">Micherla, aluna</span></div>
+          </div>
+        </div>
+        <div class="testi-nav">
+          <button type="button" class="testi-btn" id="testiPrev" aria-label="Depoimento anterior">‹</button>
+          <div class="testi-dots" id="testiDots"></div>
+          <button type="button" class="testi-btn" id="testiNext" aria-label="Próximo depoimento">›</button>
+        </div>
+        <p style="font-size:.88rem;color:var(--ink-soft);margin:16px 0 0;">Estes depoimentos são de alunos da Formação em Teologia e Doutrina da Umbanda, do Ricardo. Não são da Imersão. Cada um conta a experiência de uma pessoa.</p>
+      </div>
+    </div>
   </div>
 </section>
 
-<!-- BLOCO 10: fecho -->
-<section class="soft">
-  <div class="wrap" style="text-align:center">
-    <h2>Você não precisa continuar duvidando do que sente.</h2>
-    <p>Dois dias, ao vivo, com fundamento. Sem atalho e sem misticismo vazio.</p>
-    <div class="btn-wrap"><a class="btn" href="https://pagamento.aranduacademy.com.br/pay/imersao-umbanda-natural-oficial" data-compra>QUERO GARANTIR MINHA VAGA</a></div>
+
+<!-- BLOCO 8 — OBJEÇÃO | SOFT | foto + 3 cards -->
+<section class="section section-soft" id="objecao">
+  <div class="container split split-photo-first">
+    <div class="id-photo"><img src="../assets-kit/img/hero-1.jpg" alt="Ricardo Di Napoli" style="object-position:top;"></div>
+    <div>
+      <h2>A Imersão é para mim?</h2>
+      <p class="lede strong">Para quem é:</p>
+      <div class="cards3">
+        <div class="card3">Quem nunca foi a um terreiro, mas sente que precisa entender algo em si.</div>
+        <div class="card3">Espíritas, kardecistas e pessoas de outras linhas. Sem precisar mudar de crença.</div>
+        <div class="card3">Umbandistas que nunca tiveram o fundamento explicado.</div>
+      </div>
+      <p>Você não precisa ser médium. Você não precisa ter certeza de nada ainda.</p>
+      <p>Não é consulta, adivinhação nem trabalho espiritual. Não promete cura. Não pede que você largue a sua fé.</p>
+    </div>
   </div>
 </section>
 
-<footer>
-  <div class="wrap">
-    <p>Imersão Umbanda Natural | Arandu Academy | contato@aranduacademy.com.br</p>
-    <p>A Imersão não substitui acompanhamento médico ou psicológico.</p>
-  </div>
-</footer>
 
-<!-- botão fixo no rodapé do celular -->
-<div id="fixo"><a class="btn" href="https://pagamento.aranduacademy.com.br/pay/imersao-umbanda-natural-oficial" data-compra>QUERO GARANTIR MINHA VAGA</a></div>
+<!-- BLOCO 9 — QUEM É O RICARDO | CLARO | foto + citação -->
+<section class="section" id="quemeh">
+  <div class="container split split-photo-first">
+    <div class="id-photo photo-portrait"><img src="../assets-kit/img/bio-2.jpg" alt="Ricardo Di Napoli em pé, falando em palestra" style="object-position:top;"></div>
+    <div>
+      <h2>Quem é o Ricardo</h2>
+      <p>Ricardo Di Napoli tem <strong>40 anos de vivência na Umbanda</strong>, iniciado desde criança, e <strong>mais de 20 anos ensinando</strong>. É sacerdote, administrador, filósofo e teólogo, fundador do Movimento Umbanda Natural. Já formou <strong>mais de 1.000 alunos</strong> em Teologia e Doutrina da Umbanda.</p>
+      <p>Ele se define como universalista: ensina a Umbanda com fundamento e não converte ninguém.</p>
+      <blockquote>"Fora do conhecimento não há libertação."<cite>— Ricardo Di Napoli</cite></blockquote>
+    </div>
+  </div>
+</section>
+
+
+<!-- BLOCO 10 — DATAS E HORÁRIOS | faixa na cor do CTA -->
+<section class="section datas-banner" id="datas">
+  <div class="container">
+    <h3>Dois dias, ao vivo, pelo Zoom</h3>
+    <div class="datas-cols">
+      <div><span class="datas-icon">📅</span><strong>Sexta, 04/12</strong><span>das 18h30 às 21h30. Sintonia e Percepção.</span></div>
+      <div><span class="datas-icon">📅</span><strong>Sábado, 05/12</strong><span>das 9h às 15h. Entidades e Fundamentos.</span></div>
+      <div><span class="datas-icon">🎥</span><strong>100% online</strong><span>ao vivo pelo Zoom, com o Ricardo Di Napoli. Horário de Brasília.</span></div>
+    </div>
+  </div>
+</section>
+
+
+<!-- BLOCO 11 — INVESTIMENTO + CONTADOR | ESCURO | preço, prazo e checkout vêm do CONFIG -->
+<section class="section section-dark" id="investimento">
+  <div class="container center">
+    <div class="prose">
+      <div class="preco-box">
+        <div class="so-aberto">
+          <span class="lote-selo" data-fill="loteNome">Ingresso desta semana</span>
+          <div class="preco-de">De <span data-fill="precoDe">R$ 497,00</span> por</div>
+          <div class="preco-principal" data-fill="precoVista">R$ 39,90</div>
+          <div class="preco-vista">à vista, ou <span data-fill="parcelas">12x de R$ 3,90</span></div>
+          <div class="countdown" data-countdown>
+            <div class="cd-item"><b data-u="d">--</b><span>dias</span></div>
+            <div class="cd-item"><b data-u="h">--</b><span>horas</span></div>
+            <div class="cd-item"><b data-u="m">--</b><span>minutos</span></div>
+            <div class="cd-item"><b data-u="s">--</b><span>segundos</span></div>
+          </div>
+          <p class="preco-aviso">Este valor vale até <span data-fill="prazoTexto">segunda, 23/11</span>. Depois do prazo, o valor muda.</p>
+          <ul class="preco-lista" style="margin-top:22px;max-width:360px;">
+            <li>✓ Acesso aos 2 dias, ao vivo, pelo Zoom</li>
+            <li>✓ Vivências guiadas de conexão e autoconhecimento</li>
+            <li>✓ Grupo de acompanhamento durante a imersão</li>
+            <li>✓ Gravação dos 2 dias (opcional, na hora da compra): R$ 147,00, liberada em até 7 dias depois da imersão</li>
+          </ul>
+          <a href="#" class="btn btn-block" data-checkout>QUERO GARANTIR MINHA VAGA</a>
+        </div>
+        <div class="lote-encerrado-msg">
+          <p class="lede strong">O prazo deste valor terminou. Aperte o botão para ver o valor atual do ingresso da Imersão Umbanda Natural.</p>
+          <a href="#" class="btn btn-block" data-checkout>VER O VALOR ATUAL</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- BLOCO 12 — FAQ | CLARO -->
+<section class="section" id="faq">
+  <div class="container">
+    <div class="prose">
+      <h2>Dúvidas Frequentes</h2>
+      <details><summary>Preciso ser médium ou ter ido a um terreiro?</summary><p>Não. Incorporação é só um dos temas. A Imersão é para quem sente e quer entender, tenha ou não vivência de terreiro.</p></details>
+      <details><summary>Sou de outra religião. Vão me pedir para largar minha fé?</summary><p>Não. A proposta é entender a Umbanda com fundamento. O Ricardo se define como universalista e não converte ninguém.</p></details>
+      <details><summary>Vai ficar gravado?</summary><p>A Imersão é ao vivo. A gravação dos 2 dias pode ser levada na hora de garantir o ingresso, por R$ 147,00. Ela é liberada em até 7 dias depois da imersão.</p></details>
+      <details><summary>E se eu não puder estar?</summary><p>O ingresso é pessoal e intransferível. Faltar sem avisar não dá direito a troca nem reembolso. Avisando por e-mail com 7 dias ou mais de antecedência, você troca por outra data do mesmo evento em até 12 meses. Ingresso comprado a menos de 7 dias do evento não tem direito de arrependimento. Dúvidas: contato@aranduacademy.com.br</p></details>
+      <details><summary>Como eu assisto?</summary><p>Pelo Zoom, ao vivo, no horário de Brasília. Você assiste da sua casa.</p></details>
+    </div>
+  </div>
+</section>
+
+
+<!-- BLOCO 13 — FECHAMENTO | SOFT | foto + texto -->
+<section class="section section-soft" id="fechamento">
+  <div class="container split split-photo-first">
+    <div class="id-photo"><img src="../assets-kit/img/fechamento.jpg" alt="Ricardo Di Napoli assinando um livro para um aluno" style="object-position:top;"></div>
+    <div>
+      <h2>Você não precisa continuar duvidando do que sente.</h2>
+      <p>Dois dias, ao vivo, com fundamento. Sem atalho e sem misticismo vazio. <span class="so-aberto"><strong>Garanta seu ingresso até <span data-fill="prazoTexto">segunda, 23/11</span>.</strong> Depois do prazo, o valor muda.</span></p>
+      <a href="#investimento" class="btn">QUERO GARANTIR MINHA VAGA</a>
+    </div>
+  </div>
+</section>
+
+<footer>Imersão Umbanda Natural | Arandu Academy | <a href="mailto:contato@aranduacademy.com.br" style="color:inherit;">contato@aranduacademy.com.br</a><br>A Imersão é estudo e vivência guiada. Não substitui acompanhamento médico ou psicológico.</footer>
+
+<!-- CTA fixo: só celular, aparece depois do hero -->
+<div class="cta-sticky" id="ctaSticky">
+  <a href="#investimento" class="btn btn-block">QUERO GARANTIR MINHA VAGA</a>
+</div>
 
 <script>
-/* ===== CONFIGURAÇÃO DA SEMANA: é só aqui que se muda preço e data =====
-   Uma linha por semana. "ate" é o fim da semana, com fuso de Brasília (-03:00).
-   Para virar a semana: acrescentar a linha seguinte (preço e parcela confirmados pelo Edvan).
-   Quando "ate" passa, a página usa sozinha a próxima linha. Nunca mostra zero.
-   O texto público nunca diz o próximo valor. */
-var CONFIG = [
-  { ate: "2026-11-16T23:59:59-03:00", textoAte: "segunda, 16/11, às 23h59", preco: "29,90", parcela: "2,90" }
-  /* , { ate: "2026-11-23T23:59:59-03:00", textoAte: "segunda, 23/11, às 23h59", preco: "XX,XX", parcela: "X,XX" } */
-];
-var CHECKOUT = "https://pagamento.aranduacademy.com.br/pay/imersao-umbanda-natural-oficial";
+  /* ===================================================================
+     CONFIG DA ESCADA DE PREÇO — é AQUI que se troca preço, parcela e prazo. Mais nenhum lugar da página tem preço/data.
+     Cada degrau vale até o seu prazoISO (fuso fixo -03:00, Brasília), igual para todo visitante. Vira sozinho:
+     49,90 e 59,90 entram automaticamente. O texto da página nunca mostra o próximo valor.
+     PROIBIDO: contador que reinicia por visitante (cookie/localStorage). Acabando o último degrau, aparece a mensagem de encerrado.
+     =================================================================== */
+  var CONFIG = {
+    checkout: 'https://pagamento.aranduacademy.com.br/pay/imersao-umbanda-natural-oficial',
+    precos: [
+      { loteNome:'Ingresso desta semana', prazoISO:'2026-11-23T23:59:59-03:00', prazoTexto:'segunda, 23/11', precoDe:'R$ 497,00', parcelas:'12x de R$ 3,90', precoVista:'R$ 39,90' },
+      { loteNome:'Ingresso desta semana', prazoISO:'2026-11-30T23:59:59-03:00', prazoTexto:'segunda, 30/11', precoDe:'R$ 497,00', parcelas:'12x de R$ 4,90', precoVista:'R$ 49,90' },
+      { loteNome:'Ingresso desta semana', prazoISO:'2026-12-07T23:59:59-03:00', prazoTexto:'segunda, 07/12', precoDe:'R$ 497,00', parcelas:'12x de R$ 5,90', precoVista:'R$ 59,90' }
+    ]
+  };
+  var VARIANTE = 'v3';     /* prefixo do utm_content ('' = não mexe no utm_content) */
+  var CONTAR = true;          /* contador de visitas/cliques do placar do teste */
+  var REFAZ = false;           /* GTM também anexa UTMs: refaz o link depois dele */
 
-/* Teste A/B: marca de origem (utm_content com prefixo v3_) e contador proprio. Nunca quebra o botao se falhar. */
-function linkCompra(){
-  try{
-    var out=[],ct=null,ps=location.search.replace(/^\?/,'').split('&'),i,kv,k;
-    for(i=0;i<ps.length;i++){
-      if(!ps[i])continue;kv=ps[i].split('=');k=kv[0];
-      if(k==='ab')continue;
-      if(k==='utm_content'){ct=kv.slice(1).join('=');continue;}
-      out.push(ps[i]);
+  function degrau(){
+    var agora = Date.now(), i;
+    for (i = 0; i < CONFIG.precos.length; i++){
+      if (agora <= new Date(CONFIG.precos[i].prazoISO).getTime()) return CONFIG.precos[i];
     }
-    var orig='';try{orig=ct?decodeURIComponent(ct.replace(/\+/g,' ')):'';}catch(e){orig=ct||'';}
-    out.push('utm_content='+encodeURIComponent(('v3'+(orig?'_'+orig:'')).slice(0,191)));
-    return CHECKOUT+'?'+out.join('&');
-  }catch(e){return CHECKOUT;}
-}
-function contaAB(k){
-  try{
-    var u='https://abacus.jasoncameron.dev/hit/arandu-iun13-ab/'+k;
-    if(window.fetch)fetch(u,{mode:'no-cors',keepalive:true}).catch(function(){});else(new Image()).src=u;
-  }catch(e){}
-}
-setTimeout(function(){
-  contaAB('v3_visitas');
-  try{if(!localStorage.getItem('iun13_vis_v3')){localStorage.setItem('iun13_vis_v3','1');contaAB('v3_unicos');}}catch(e){}
-},800);
-try{ document.querySelectorAll('[data-compra]').forEach(function(a){ a.setAttribute('href', linkCompra()); }); }catch(e){}
-
-(function(){
-  function semanaAtual(){
-    var agora = Date.now();
-    for (var i=0;i<CONFIG.length;i++){ if (agora <= new Date(CONFIG[i].ate).getTime()) return {s:CONFIG[i], vencida:false}; }
-    return {s:CONFIG[CONFIG.length-1], vencida:true};
+    return null;
   }
-  function set(sel, txt){ document.querySelectorAll(sel).forEach(function(e){ e.textContent = txt; }); }
-  function atualizar(){
-    var r = semanaAtual(), s = r.s;
-    if (r.vencida){
-      /* semana sem linha nova na CONFIG: não mostra preço nem contagem, manda conferir no checkout */
-      document.getElementById('faixa-txt').innerHTML = 'Confira o valor do ingresso no checkout.';
-      document.querySelectorAll('[data-bloco-preco]').forEach(function(e){ e.style.display='none'; });
-      set('[data-tempo]','');
-      return;
+
+  /* link do checkout: repassa os UTMs/fbclid da URL; com prefixo, marca o utm_content (ex.: v2_origem) */
+  function linkCompra(){
+    try{
+      var out=[],ct=null,ps=location.search.replace(/^\?/,'').split('&'),i,kv,k;
+      for(i=0;i<ps.length;i++){
+        if(!ps[i])continue;kv=ps[i].split('=');k=kv[0];
+        if(k==='ab')continue;
+        if(VARIANTE && k==='utm_content'){ct=kv.slice(1).join('=');continue;}
+        out.push(ps[i]);
+      }
+      if(VARIANTE){
+        var orig='';try{orig=ct?decodeURIComponent(ct.replace(/\+/g,' ')):'';}catch(e){orig=ct||'';}
+        out.push('utm_content='+encodeURIComponent((VARIANTE+(orig?'_'+orig:'')).slice(0,191)));
+      }
+      return out.length ? CONFIG.checkout+'?'+out.join('&') : CONFIG.checkout;
+    }catch(e){return CONFIG.checkout;}
+  }
+  function conta(k){
+    if(!CONTAR) return;
+    try{
+      var u='https://abacus.jasoncameron.dev/hit/arandu-iun13-ab/'+VARIANTE+'_'+k;
+      if(window.fetch)fetch(u,{mode:'no-cors',keepalive:true}).catch(function(){});else(new Image()).src=u;
+    }catch(e){}
+  }
+
+  (function(){
+    var blocks = document.querySelectorAll('[data-countdown]');
+    var inlines = document.querySelectorAll('[data-countdown-inline]');
+    var checkouts = document.querySelectorAll('[data-checkout]');
+    var timer;
+    function pad(n){ return (n < 10 ? '0' : '') + n; }
+    function refazLinks(){ checkouts.forEach(function(a){ a.href = linkCompra(); }); }
+    function preenche(g){
+      document.querySelectorAll('[data-fill]').forEach(function(el){
+        var k = el.getAttribute('data-fill');
+        if (g[k] != null) el.textContent = g[k];
+      });
     }
-    set('[data-preco]', s.preco); set('[data-parcela]', s.parcela); set('[data-ate-txt]', s.textoAte);
-    var ms = new Date(s.ate).getTime() - Date.now(); if (ms < 0) ms = 0;
-    var d = Math.floor(ms/864e5), h = Math.floor(ms%864e5/36e5), m = Math.floor(ms%36e5/6e4);
-    set('[data-tempo]', d + (d==1?' dia ':' dias ') + h + ' h ' + m + ' min');
-  }
-  atualizar(); setInterval(atualizar, 30000);
-
-  /* InitiateCheckout no clique, depois segue para o checkout */
-  document.querySelectorAll('[data-compra]').forEach(function(a){
-    a.addEventListener('click', function(ev){
-      ev.preventDefault();
-      var ido = false;
-      function ir(){ if (ido) return; ido = true; window.location.href = linkCompra(); }
-      contaAB('v3_cliques');
-      try { fbq('track','InitiateCheckout',{page_variant:'v3'}); } catch(e){}
-      setTimeout(ir, 250);
+    var atual = null;
+    function tick(){
+      var g = degrau();
+      if (!g){
+        document.body.classList.add('lote-encerrado');
+        clearInterval(timer);
+        return;
+      }
+      if (g !== atual){ atual = g; preenche(g); }
+      var diff = new Date(g.prazoISO).getTime() - Date.now();
+      var s = Math.max(0, Math.floor(diff / 1000));
+      var d = Math.floor(s / 86400); s -= d * 86400;
+      var h = Math.floor(s / 3600);  s -= h * 3600;
+      var m = Math.floor(s / 60);    s -= m * 60;
+      blocks.forEach(function(bk){
+        bk.querySelector('[data-u="d"]').textContent = pad(d);
+        bk.querySelector('[data-u="h"]').textContent = pad(h);
+        bk.querySelector('[data-u="m"]').textContent = pad(m);
+        bk.querySelector('[data-u="s"]').textContent = pad(s);
+      });
+      inlines.forEach(function(i){ i.textContent = pad(d) + 'd ' + pad(h) + 'h ' + pad(m) + 'm ' + pad(s) + 's'; });
+    }
+    refazLinks();
+    checkouts.forEach(function(a){
+      a.addEventListener('click', function(ev){
+        ev.preventDefault();
+        var ido = false;
+        function ir(){ if (ido) return; ido = true; window.location.href = linkCompra(); }
+        conta('cliques');
+        try { fbq('track','InitiateCheckout',{page_variant:'v3'}); } catch(e){}
+        setTimeout(ir, 250);
+      });
     });
-  });
-})();
+    if (REFAZ){
+      window.addEventListener('load', function(){ setTimeout(refazLinks, 1500); setTimeout(refazLinks, 4000); });
+      ['mousedown','touchstart','focus'].forEach(function(ev){ document.addEventListener(ev, function(e){ if(e.target && e.target.closest && e.target.closest('[data-checkout]')) refazLinks(); }, true); });
+    }
+    setTimeout(function(){
+      conta('visitas');
+      try{ if(!localStorage.getItem('iun13_vis_'+VARIANTE)){ localStorage.setItem('iun13_vis_'+VARIANTE,'1'); conta('unicos'); } }catch(e){}
+    }, 800);
+    timer = setInterval(tick, 1000);
+    tick();
+  })();
+
+  // CTA fixo (celular): aparece quando o hero sai da tela
+  (function(){
+    var hero = document.getElementById('hero');
+    var sticky = document.getElementById('ctaSticky');
+    if(!hero || !sticky) return;
+    new IntersectionObserver(function(entries){
+      entries.forEach(function(e){ sticky.classList.toggle('show', !e.isIntersecting); });
+    }, { threshold: 0 }).observe(hero);
+  })();
+
+  // Carrossel de depoimentos
+  (function(){
+    var track = document.getElementById('testiTrack');
+    var prev = document.getElementById('testiPrev');
+    var next = document.getElementById('testiNext');
+    var dotsWrap = document.getElementById('testiDots');
+    if(!track || !dotsWrap) return;
+    var cards = track.children;
+    for(var i=0;i<cards.length;i++){
+      var dot = document.createElement('button');
+      dot.type = 'button';
+      dot.className = 'testi-dot' + (i===0 ? ' active' : '');
+      dot.setAttribute('aria-label','Ir para depoimento ' + (i+1));
+      (function(idx){ dot.addEventListener('click', function(){ track.scrollTo({ left: idx * track.clientWidth, behavior: 'smooth' }); }); })(i);
+      dotsWrap.appendChild(dot);
+    }
+    function updateDots(){
+      var idx = Math.round(track.scrollLeft / track.clientWidth);
+      Array.prototype.forEach.call(dotsWrap.children, function(d, i){ d.classList.toggle('active', i === idx); });
+    }
+    track.addEventListener('scroll', function(){ window.requestAnimationFrame(updateDots); });
+    if(prev) prev.addEventListener('click', function(){ track.scrollBy({ left: -track.clientWidth, behavior: 'smooth' }); });
+    if(next) next.addEventListener('click', function(){ track.scrollBy({ left: track.clientWidth, behavior: 'smooth' }); });
+  })();
 </script>
 </body>
 </html>
