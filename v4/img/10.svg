@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30" width="100px" height="100">
+
+<circle cx = "50%" cy = "50%" r = "3px" fill="#8e44ad"></circle>
+<circle class = "pulse" cx = "50%" cy = "50%" r = "5px" stroke="#8e44ad" stroke-opacity="1"></circle>
+
+<style>
+
+.pulse
+{
+fill-opacity: 0;
+transform-origin: 50% 50%;
+animation: pulse 3s linear infinite;
+-webkit-animation: pulse 3s linear infinite;
+-moz-animation: pulse 3s linear infinite;
+-o-animation: pulse 3s linear infinite;
+}
+
+@keyframes pulse {from {stroke-width: 1px;stroke-opacity: 1;transform: scale(0.3);}to {stroke-width: 0;stroke-opacity: 0;transform: scale(2);}}
+@-webkit-keyframes pulse {from {stroke-width: 1px;stroke-opacity: 1;transform: scale(0.3);}to {stroke-width: 0;stroke-opacity: 0;transform: scale(2);}}
+@-moz-keyframes pulse {from {stroke-width: 1px;stroke-opacity: 1;transform: scale(0.3);}to {stroke-width: 0;stroke-opacity: 0;transform: scale(2);}}
+@-o-keyframes pulse {from {stroke-width: 1px;stroke-opacity: 1;transform: scale(0.3);}to {stroke-width: 0;stroke-opacity: 0;transform: scale(2);}}
+
+</style>
+
+</svg>
