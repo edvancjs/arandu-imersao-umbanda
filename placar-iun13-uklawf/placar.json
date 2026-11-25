@@ -15,15 +15,15 @@
   "vendas": 1,
   "taxa_clique": 6.6,
   "taxa_conversao": 0.6,
-  "custo_por_venda": 1084.94
+  "custo_por_venda": 1084.97
  },
- "gasto_fria": 2169.89,
+ "gasto_fria": 2169.95,
  "vendas_atrasadas": false,
  "gasto_atrasado": false,
- "contador_atrasado": false,
+ "contador_atrasado": true,
  "frente": "Ainda cedo para decidir",
  "frente_detalhe": "Precisa de 30 vendas de cada lado. Hoje: v2 com 13, v3 com 1. Na frente por enquanto: v2 (ainda pode ser sorte).",
- "atualizado_em": "2026-11-25T16:30:01-03:00",
- "atualizado_hhmm": "16:30",
+ "atualizado_em": "2026-11-25T17:00:01-03:00",
+ "atualizado_hhmm": "17:00",
  "inicio_texto": "14/11 às 19h01"
 }
